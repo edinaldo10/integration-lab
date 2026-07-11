@@ -30,10 +30,15 @@ jobs:
           # Verifica erros de sintaxe (E9, F63, F7, F82) em todos os serviços
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
-  build-docker:
+ build-docker:
     needs: test-and-lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
+      # Adicione este passo para configurar o Docker Buildx
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Check Docker Compose configuration
-        run: docker-compose config
+        run: docker compose config
