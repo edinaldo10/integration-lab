@@ -1,0 +1,27 @@
+# Integration Lab 🚀
+
+Bem-vindo ao **Integration Lab**, um ambiente de microsserviços altamente resiliente e observável. Este projeto demonstra a implementação de uma arquitetura de microsserviços em Python, utilizando padrões de resiliência e uma stack completa de monitoramento.
+Desenvolvido a partir do conhecimento adquirido no Move Tech Magalu
+## 🛠️ Stack Tecnológica
+
+- **Backend**: FastAPI
+- **Resiliência**: `pybreaker` (Circuit Breaker Pattern)
+- **Orquestração**: Docker & Docker Compose
+- **Observabilidade**: 
+  - **Prometheus** (Métricas)
+  - **Loki** (Logs estruturados)
+  - **Grafana** (Visualização e Dashboards)
+- **CI/CD**: GitHub Actions (Pipeline de Linting e Build)
+
+## 📁 Estrutura do Projeto
+
+```text
+.
+├── .github/workflows/  # Pipeline de CI/CD
+├── service-a/          # Serviço de entrada (Gateway)
+├── service-b/          # Serviço com Circuit Breaker
+├── service-c/          # Agregador de APIs externas
+├── docker-compose.yml  # Orquestração de containers
+├── prometheus.yml      # Configuração de métricas
+└── promtail.yml        # Configuração de coleta de logs
+
