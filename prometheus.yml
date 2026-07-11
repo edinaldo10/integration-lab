@@ -1,0 +1,9 @@
+# prometheus.yml
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'meus-servicos'
+    static_configs:
+      # O Prometheus vai buscar as métricas no endpoint /metrics nesses hosts
+      - targets: ['service-a:8000', 'service-b:8000', 'service-c:8000']

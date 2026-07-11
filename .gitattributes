@@ -1,0 +1,8 @@
+# Force LF para scripts e arquivos de configuração Docker
+*.sh text eol=lf
+*.yml text eol=lf
+Dockerfile text eol=lf
+requirements.txt text eol=lf
+
+# Auto-detect para outros arquivos de texto
+* text=auto
